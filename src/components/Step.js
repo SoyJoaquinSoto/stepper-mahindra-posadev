@@ -1,14 +1,31 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import steps from "../steps";
 
 const Step = () => {
+	let navigate = useNavigate();
 	const { id } = useParams();
-	const contenido_encontrado = steps.find((step) => step.id === Number(id));
+	const index_paso_encontrado = steps.findIndex(
+		(step) => step.id === Number(id)
+	);
 	let contenido = "Step not found!";
+	let contenido_btn_sig = "Next";
 
-	if (contenido_encontrado) {
-		contenido = contenido_encontrado.content;
+	if (index_paso_encontrado || index_paso_encontrado === 0) {
+		contenido = steps[index_paso_encontrado].content;
+		if (index_paso_encontrado === steps.length - 1) {
+			contenido_btn_sig = "Send";
+		}
 	}
+
+	const siguiente = () => {
+		if (index_paso_encontrado || index_paso_encontrado === 0) {
+			if (index_paso_encontrado === steps.length - 1) {
+				alert("Finished all steps!");
+			} else {
+				navigate(`/step/${steps[index_paso_encontrado + 1].id}`);
+			}
+		}
+	};
 
 	return (
 		<div className="h-full">
@@ -36,8 +53,11 @@ const Step = () => {
 					<button className="py-2 px-4 bg-gris_mahindra bg-opacity-70 text-white text-opacity-90 rounded-lg">
 						Back
 					</button>
-					<button className="py-2 px-4 bg-rojo_mahindra text-white rounded-lg">
-						Next
+					<button
+						className="py-2 px-4 bg-rojo_mahindra text-white rounded-lg"
+						onClick={siguiente}
+					>
+						{contenido_btn_sig}
 					</button>
 				</div>
 			</div>
