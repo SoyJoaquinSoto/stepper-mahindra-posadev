@@ -55,7 +55,7 @@ const Step = () => {
 							}`}
 						>
 							<div
-								className={`h-full w-64 text-white text-xl flex items-center pl-4 ${
+								className={`h-full w-52 text-white text-xl flex items-center pl-4 ${
 									step.id === Number(id) || index < index_paso_encontrado
 										? "bg-rojo_mahindra"
 										: "bg-gris_mahindra text-opacity-50"
