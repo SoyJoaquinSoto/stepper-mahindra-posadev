@@ -1,3 +1,10 @@
+/* 
+	Código creado por Joaquín Soto
+	github: https://github.com/SoyJoaquinSoto
+	linkedin: https://www.linkedin.com/in/joaquín-soto-de-la-mora-16075a150/
+
+*/
+
 import { useParams, useNavigate } from "react-router-dom";
 import steps from "../steps";
 

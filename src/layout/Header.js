@@ -1,3 +1,10 @@
+/* 
+	Código creado por Joaquín Soto
+	github: https://github.com/SoyJoaquinSoto
+	linkedin: https://www.linkedin.com/in/joaquín-soto-de-la-mora-16075a150/
+
+*/
+
 function Header() {
 	return (
 		<div className="flex flex-row items-end justify-start gap-20 pl-4 pt-4">
