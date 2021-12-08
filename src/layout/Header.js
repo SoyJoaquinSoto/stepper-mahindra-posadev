@@ -6,7 +6,7 @@ function Header() {
 				src="/mahindra.png"
 				alt="Logo de Tech Mahindra; 'Tech' en fuente gris en la parte superior y 'Mahindra' en la inferior con fuente roja"
 			/>
-			<h1 className="text-rojo_mihandra font-bold text-2xl pb-2">
+			<h1 className="text-rojo_mahindra font-semibold text-2xl pb-2">
 				Stepper - Frontend Coding Challenge
 			</h1>
 		</div>
