@@ -27,6 +27,12 @@ const Step = () => {
 		}
 	};
 
+	const anterior = () => {
+		if (index_paso_encontrado) {
+			navigate(`/step/${steps[index_paso_encontrado - 1].id}`);
+		}
+	};
+
 	return (
 		<div className="h-full">
 			<nav className="h-14 border-b-2 border-gris_mahindra">
@@ -50,7 +56,11 @@ const Step = () => {
 					{contenido}
 				</div>
 				<div className="h-1/6 flex flex-row justify-between items-center">
-					<button className="py-2 px-4 bg-gris_mahindra bg-opacity-70 text-white text-opacity-90 rounded-lg">
+					<button
+						className="py-2 px-4 bg-gris_mahindra bg-opacity-70 text-white text-opacity-90 rounded-lg"
+						onClick={anterior}
+						disabled={!index_paso_encontrado}
+					>
 						Back
 					</button>
 					<button
