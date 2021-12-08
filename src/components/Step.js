@@ -7,7 +7,6 @@ const Step = () => {
 	const index_paso_encontrado = steps.findIndex(
 		(step) => step.id === Number(id)
 	);
-	console.log(index_paso_encontrado);
 	let contenido = "Step not found!";
 	let contenido_btn_sig = "Next";
 
@@ -39,25 +38,46 @@ const Step = () => {
 	};
 
 	return (
-		<div className="h-full">
-			<nav className="h-14 border-b-2 border-gris_mahindra">
-				<ul className="flex flex-row gap-0 h-full w-full">
+		<div className="h-full w-full">
+			<nav className="h-16 border-b-2 relative border-gris_mahindra">
+				<ul className="flex flex-row h-full w-full">
 					{steps.map((step, index) => (
 						<li
 							key={step.id}
-							className={`h-full w-64 text-white text-xl flex items-center pl-4 ${
-								step.id === Number(id) || index < index_paso_encontrado
-									? "bg-rojo_mahindra"
-									: "bg-gris_mahindra text-opacity-50"
+							className={`flex items-center pr-16 overflow-hidden relative ${
+								step.id === Number(id) && index !== steps.length - 1
+									? "bg-gris_mahindra"
+									: ""
+							} ${index < index_paso_encontrado ? "bg-rojo_mahindra" : ""} ${
+								index > index_paso_encontrado && index !== steps.length - 1
+									? "bg-gris_mahindra"
+									: ""
 							}`}
 						>
-							Step {step.id}
+							<div
+								className={`h-full w-64 text-white text-xl flex items-center pl-4 ${
+									step.id === Number(id) || index < index_paso_encontrado
+										? "bg-rojo_mahindra"
+										: "bg-gris_mahindra text-opacity-50"
+								}`}
+							>
+								Step {step.id}
+							</div>
+							<div className="w-16 overflow-hidden inline-block right-0 absolute top-1/2 transform translate -translate-y-1/2">
+								<div
+									className={`h-20 rotate-45 -mt-2 transform origin-top-left ${
+										step.id === Number(id) || index < index_paso_encontrado
+											? "bg-rojo_mahindra"
+											: "bg-gris_mahindra text-opacity-50"
+									}`}
+								></div>
+							</div>
 						</li>
 					))}
 				</ul>
 			</nav>
 			<div className="flex flex-col px-6 pb-6 pt-14 -mt-14 h-full">
-				<div className="h-5/6 flex justify-center items-center text-gris_mahindra text-lg font-medium">
+				<div className="h-5/6 flex justify-center items-center text-gris_mahindra text-xl font-medium">
 					{contenido}
 				</div>
 				<div className="h-1/6 flex flex-row justify-between items-center">
