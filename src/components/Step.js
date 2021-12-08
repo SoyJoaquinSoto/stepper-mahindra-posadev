@@ -2,6 +2,7 @@
 	Código creado por Joaquín Soto
 	github: https://github.com/SoyJoaquinSoto
 	linkedin: https://www.linkedin.com/in/joaquín-soto-de-la-mora-16075a150/
+	email: joaquinsotodlm@gmail.com
 
 */
 
