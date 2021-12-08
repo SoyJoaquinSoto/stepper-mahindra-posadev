@@ -5,6 +5,7 @@ module.exports = {
 		extend: {
 			colors: {
 				rojo_mihandra: "#E21936",
+				gris_mihandra: "#6D6E70",
 			},
 		},
 	},
