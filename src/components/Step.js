@@ -37,11 +37,11 @@ const Step = () => {
 		<div className="h-full">
 			<nav className="h-14 border-b-2 border-gris_mahindra">
 				<ul className="flex flex-row gap-0 h-full w-full">
-					{steps.map((step) => (
+					{steps.map((step, index) => (
 						<li
 							key={step.id}
 							className={`h-full w-64 text-white text-xl flex items-center pl-4 ${
-								step.id === Number(id)
+								step.id === Number(id) || index < index_paso_encontrado
 									? "bg-rojo_mahindra"
 									: "bg-gris_mahindra text-opacity-50"
 							}`}
