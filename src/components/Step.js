@@ -7,10 +7,11 @@ const Step = () => {
 	const index_paso_encontrado = steps.findIndex(
 		(step) => step.id === Number(id)
 	);
+	console.log(index_paso_encontrado);
 	let contenido = "Step not found!";
 	let contenido_btn_sig = "Next";
 
-	if (index_paso_encontrado || index_paso_encontrado === 0) {
+	if (index_paso_encontrado !== -1) {
 		contenido = steps[index_paso_encontrado].content;
 		if (index_paso_encontrado === steps.length - 1) {
 			contenido_btn_sig = "Send";
@@ -18,18 +19,22 @@ const Step = () => {
 	}
 
 	const siguiente = () => {
-		if (index_paso_encontrado || index_paso_encontrado === 0) {
+		if (index_paso_encontrado !== -1) {
 			if (index_paso_encontrado === steps.length - 1) {
 				alert("Finished all steps!");
 			} else {
 				navigate(`/step/${steps[index_paso_encontrado + 1].id}`);
 			}
+		} else {
+			navigate(`/step/${steps[0].id}`);
 		}
 	};
 
 	const anterior = () => {
-		if (index_paso_encontrado) {
+		if (index_paso_encontrado !== -1) {
 			navigate(`/step/${steps[index_paso_encontrado - 1].id}`);
+		} else {
+			navigate(`/step/${steps[0].id}`);
 		}
 	};
 
