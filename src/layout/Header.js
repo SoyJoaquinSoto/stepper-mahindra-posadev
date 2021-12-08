@@ -1,6 +1,6 @@
 function Header() {
 	return (
-		<div className="flex flex-row items-end justify-start gap-20 p-4">
+		<div className="flex flex-row items-end justify-start gap-20 pl-4 pt-4">
 			<img
 				className="w-1/5"
 				src="mahindra.png"
